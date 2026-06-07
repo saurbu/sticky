@@ -1,6 +1,4 @@
-/* ==========================================================================
-   Reset & Global Typography
-   ========================================================================== */
+/*  Reset & Global Typography */
 * {
     margin: 0;
     padding: 0;
@@ -14,26 +12,22 @@ body {
     min-height: 100vh;
 }
 
-/* Base Page Wrapper */
 .page-container {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
 }
 
-/* ==========================================================================
-   Split Layout Architecture
-   ========================================================================== */
 .main-content {
     display: flex;
     flex: 1;
     width: 100%;
     align-items: center; 
     padding-top: 40px;
-    padding-bottom: 120px; /* Massive bottom gap ensuring plenty of space before footer */
+    padding-bottom: 120px; 
 }
 
-/* Left Panel - Sticky Note Container */
+/* Left Panel */
 .sticky-side {
     flex: 1;
     display: flex;
@@ -42,7 +36,6 @@ body {
     padding: 40px;
 }
 
-/* Sticky Note Card Background wrapper */
 .quote-box {
     width: 500px;
     height: 500px;
@@ -51,20 +44,17 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 75px 65px; /* Added higher top/bottom internal spacing padding */
+    padding: 75px 65px; 
     position: relative;
 }
 
-/* ==========================================================================
-   Social Post UI inside Sticky Note (Perfect Top/Center/Bottom Spacing)
-   ========================================================================== */
 .post-card {
     width: 100%;
     max-width: 360px;
-    height: 100%; /* Spans full height inside note padding */
+    height: 100%; 
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* Pins header to TOP, body to CENTER, footer to BOTTOM */
+    justify-content: space-between;
     opacity: 0;
     transform: translateY(10px);
     transition: opacity 0.4s ease, transform 0.4s ease;
@@ -75,7 +65,7 @@ body {
     transform: translateY(0);
 }
 
-/* Header Area: Profile details pinned at the top */
+/* Header */
 .post-header {
     display: flex;
     align-items: center;
@@ -117,11 +107,11 @@ body {
     cursor: pointer;
 } platform
 
-/* Main Post Content Body centered vertically */
+/* Main Post  */
 .post-body {
     flex: 1;
     display: flex;
-    align-items: center; /* Centers the text perfectly within the open middle area */
+    align-items: center; 
     text-align: left;
     padding: 15px 0;
 }
@@ -133,7 +123,7 @@ body {
     line-height: 1.5;
 }
 
-/* Footer Interaction Icons pinned at the bottom */
+/* Footer Interaction  */
 .post-footer {
     display: flex;
     gap: 18px;
@@ -154,9 +144,7 @@ body {
     transform: scale(1.1);
 }
 
-/* ==========================================================================
-   Right Panel - Form Container & Card Style
-   ========================================================================== */
+/*  Right Panel */
 .form-side {
     flex: 1;
     display: flex;
@@ -181,7 +169,7 @@ body {
     object-fit: contain;
 }
 
-/* Inputs & Actions */
+/* Inputs */
 .form-group {
     margin-bottom: 16px;
 }
@@ -242,9 +230,7 @@ body {
 .alert-danger { background-color: #fff2f2; border: 1px solid #ffcccc; color: #cc0000; }
 .alert-success { background-color: #f2fff2; border: 1px solid #ccffcc; color: #006600; }
 
-/* ==========================================================================
-   Global Footer
-   ========================================================================== */
+/*   Footer */
 .footer {
     width: 100%;
     padding: 40px 20px; 
@@ -273,9 +259,7 @@ body {
     color: #8e8e8e;
 }
 
-/* ==========================================================================
-   Responsive Viewport Breakpoints
-   ========================================================================== */
+/*  Responsive */
 @media (max-width: 1024px) {
     .quote-box { width: 400px; height: 400px; padding: 55px 45px; }
 }

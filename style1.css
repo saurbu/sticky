@@ -1,6 +1,4 @@
-/* ==========================================================================
-   GLOBAL STYLES & CORE CONFIGURATIONS
-   ========================================================================== */
+
 *{
     margin: 0;
     padding: 0;
@@ -18,9 +16,7 @@ a{
     color: black;
 }
 
-/* ==========================================================================
-   NAVIGATION BAR COMPONENT
-   ========================================================================== */
+/*  NAVIGATION BAR  */
 .navbar{
     display: flex;
     align-items: center;
@@ -133,9 +129,6 @@ a{
     border: 0;
 }
 
-/* ==========================================================================
-   WORKSPACE GRID CONTAINER STRUCTURE
-   ========================================================================== */
 .container{
     padding: 20px 6%;
     display: flex;
@@ -143,9 +136,7 @@ a{
     justify-content: space-between;
 }
 
-/* ==========================================================================
-   LEFT SIDEBAR PANEL
-   ========================================================================== */
+/*   LEFT SIDEBAR */
 .left-sidebar{
     flex-basis: 25%;
     align-self: flex-start;
@@ -238,9 +229,7 @@ a{
     margin: 10px 0;
 }
 
-/* ==========================================================================
-   RIGHT SIDEBAR PANEL
-   ========================================================================== */
+/*  RIGHT SIDEBAR */
 .right-sidebar{
     flex-basis: 25%;
     align-self: flex-start;
@@ -285,7 +274,7 @@ a{
 .right-sidebar-follow {
     background: #fff;
     padding: 20px;
-    border-radius: 8px; /* Smooth card edges to match the rest of the dashboard */
+    border-radius: 8px; 
     margin-top: 15px;
     box-sizing: border-box;
 }
@@ -307,7 +296,6 @@ a{
     margin: 0;
 }
 
-/* Flexbox automatically handles side-by-side vertical alignment */
 .follow-people li {
     display: flex;
     align-items: center; 
@@ -318,8 +306,8 @@ a{
     width: 45px;
     height: 45px;
     border-radius: 50%;
-    object-fit: cover; /* Prevents user avatars from stretching awkwardly */
-    margin-right: 12px; /* Smooth spacing between picture and text */
+    object-fit: cover; 
+    margin-right: 12px; 
     border: 1px solid #eaeaea;
 }
 
@@ -331,7 +319,6 @@ a{
     word-break: break-all;
 }
 
-/* Beautiful styling for your action button */
 .find-more-btn {
     width: 100%;
     border: none;
@@ -355,9 +342,7 @@ a{
     transform: scale(0.98);
 }
 
-/* ==========================================================================
-   MAIN FEED POST SYSTEM WIDGETS & PICKERS
-   ========================================================================== */
+/*  MAIN FEED POST */
 .main-content{
     flex-basis: 47%;
 }
@@ -441,46 +426,34 @@ a{
     cursor: pointer;
     border-radius: 4px;
 }
-/* =======================================================
-   ISOLATED SCROLL CONTEXT WITH HIDDEN SCROLLBARS
-   ======================================================= */
+/*  SCROLL  */
 
-/* 1. Dashboard Feed Container Setup (index.php) */
 #scroll-feed-viewport {
     display: block;
     width: 100%;
-    max-height: 75vh;            /* Restricts vertical container growth */
-    overflow-y: auto;            /* Keeps scrolling mechanics functional */
-    
-    /* Hides default native scrollbars for Firefox and IE/Edge */
+    max-height: 75vh;         
+    overflow-y: auto;           
     scrollbar-width: none;       
     -ms-overflow-style: none;    
 }
 
-/* 2. Workspace Personal Grid Setup (profile.php) */
 .profile-notes-grid {
     display: block;
     width: 100%;
-    max-height: 75vh;            /* Restricts profile container growth */
-    overflow-y: auto;            /* Keeps scrolling mechanics functional */
-    
-    /* Hides default native scrollbars for Firefox and IE/Edge */
+    max-height: 75vh;           
+    overflow-y: auto;
     scrollbar-width: none;       
     -ms-overflow-style: none;    
 }
 
-/* 3. Completely hide the scrollbar track for Webkit Browsers (Chrome, Safari, newer Edge) */
 #scroll-feed-viewport::-webkit-scrollbar,
 .profile-notes-grid::-webkit-scrollbar {
-    display: none;               /* Eliminates the ugly vertical line entirely */
+    display: none;     
     width: 0 !important;
     height: 0 !important;
     background: transparent;
 }
 
-/* ==========================================================================
-   FIXED SLIDE-OUT PROFILE DRAWER OVERLAY OVERLAP
-   ========================================================================== */
 .profile-drawer {
     position: fixed;
     top: 0;
@@ -494,7 +467,7 @@ a{
     padding: 40px 30px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* Securely isolates layout: top content vs bottom footer */
+    justify-content: space-between;
     box-sizing: border-box;
 }
 
@@ -502,7 +475,6 @@ a{
     right: 0; 
 }
 
-/* Structural Wrapper to group avatar and upload form cleanly at the top */
 .drawer-main-content {
     width: 100%;
     display: flex;
@@ -598,7 +570,6 @@ a{
     background: #556006;
 }
 
-/* Footer Wrapper to cleanly pin items to bottom */
 .drawer-footer-wrapper {
     width: 100%;
     margin-top: auto;
@@ -611,7 +582,6 @@ a{
     margin-bottom: 15px;
 }
 
-/* Red Styled Logout Button Action Link */
 .logout-action-link {
     display: block;
     width: 100%;
@@ -637,9 +607,7 @@ a{
     transform: scale(0.98);
 }
 
-/* ==========================================================================
-   UNIFORM LARGE-FORMAT CENTERED NOTE ARCHITECTURE
-   ========================================================================== */
+
 .notes-container {
     width: 100%;
     margin: 25px 0;
@@ -661,7 +629,7 @@ a{
     position: relative;
 }
 
-/* Base Template Assets */
+/* Base Template */
 .notes1.tpl-yellow {
     background: url('temp.png') no-repeat !important;
     background-size: 100% 100% !important;
@@ -675,13 +643,12 @@ a{
     border-radius: 16px;
 }
 
-/* Color Picker Applied Backgrounds Mode layout rules override */
+/* Color Picker */
 .notes1.custom-color-mode {
     background-image: none !important;
     border-radius: 16px;
 }
 
-/* Interior Structure layouts rules configuration */
 .post-card {
     width: 100%;
     height: 100%;
@@ -817,9 +784,7 @@ a{
     stroke: #707e08;
 }
 
-/* ==========================================================================
-   INTERACTIVE LIKE MODULE WIDGET COMPONENT
-   ========================================================================== */
+/*  LIKE */
 .like-container-widget {
     display: flex;
     align-items: center;
@@ -828,25 +793,21 @@ a{
     user-select: none;
 }
 
-/* Base Heart Shape Vector Settings */
 .footer-icon-svg.heart-icon {
-    stroke: #111111; /* Visible outline border */
-    fill: none;       /* Initially transparent */
+    stroke: #111111;
+    fill: none;      
     transition: fill 0.2s ease, stroke 0.2s ease, transform 0.1s ease;
 }
 
-/* Activated State Modifier Rules triggered by JS class list */
 .footer-icon-svg.heart-icon.liked-active {
     fill: #ff4d4d !important;
     stroke: #ff4d4d !important;
 }
 
-/* Scale pop animation effect on mouse click */
 .like-container-widget:active .heart-icon {
     transform: scale(0.85);
 }
 
-/* Numeric Text Label Layout styling */
 .like-counter-display {
     font-size: 14px;
     font-weight: 600;
@@ -858,7 +819,6 @@ a{
     color: #ff4d4d;
 }
 
-/* Ensure contrast consistency over dark template assets */
 .notes1.tpl-dark .like-counter-display {
     color: #ffffff;
 }
@@ -866,7 +826,6 @@ a{
     color: #ff4d4d;
 }
 
-/* Sidebar Modifications */
 .sidebar-profile-box { position: relative; }
 .sidebar-cover-banner { width: 100%; height: 95px; object-fit: cover; }
 .nav-icon-small { width: 16px; margin-right: 5px; }
@@ -875,18 +834,15 @@ a{
 .signout-trigger-text { color: #d9534f; }
 .hide-element { display: none; }
 
-/* Main Input Layout Adjustments */
 .creator-avatar-preview { width: 35px; height: 35px; border-radius: 50%; object-fit: cover; }
 .notes-input-wrapper { width: 100%; }
 .character-counter-node { font-size: 11px; color: #666; text-align: right; margin-top: 2px; font-family: 'poppins', sans-serif; }
 
-/* Right Sidebar Elements */
 .empty-feed-fallback { font-size: 12px; color: #777; padding: 10px 0; }
 .sidebar-heading-small { font-size: 14px; color: #333; margin-bottom: 12px; font-weight: 600; font-family: 'poppins'; }
 .member-directory-avatar { width: 32px; height: 32px; border-radius: 50%; object-fit: cover; margin-right: 10px; }
 .find-more-btn { width: 100%; border: none; background: #707e08; color: white; padding: 8px; font-size: 12px; font-weight: 600; border-radius: 4px; cursor: pointer; margin-top: 10px; font-family: 'poppins'; }
 
-/* Edit Icon Layout Trigger Button */
 .edit-profile-trigger-btn {
     position: absolute;
     top: 10px;
@@ -906,7 +862,6 @@ a{
 .edit-profile-trigger-btn:hover { background: rgba(0, 0, 0, 0.8); }
 .edit-profile-trigger-btn svg { fill: #ffffff; width: 14px; height: 14px; }
 
-/* Edit Profile Modal Windows Box UI */
 .custom-edit-modal {
     display: none;
     position: fixed;
@@ -935,11 +890,7 @@ a{
 .modal-btn-save { background: #707e08; color: white; border: none; padding: 8px 16px; border-radius: 5px; cursor: pointer; font-weight: 600; }
 .modal-btn-cancel { background: #ccc; color: #333; border: none; padding: 8px 16px; border-radius: 5px; cursor: pointer; }
 
-/* ==========================================
-   PROFILE VIEW WORKSPACE - 2 COLUMN GRID FIX
-   ========================================== */
-
-/* 1. Main Content Two-Column Layout (Sidebar + Workspace) */
+/* profile */
 .layout-profile-view {
     display: grid;
     grid-template-columns: 300px 1fr;
@@ -950,7 +901,6 @@ a{
     padding: 0 20px;
 }
 
-/* 2. Workspace Content Wrapper */
 .layout-grid-stream {
     width: 100%;
 }
@@ -963,15 +913,13 @@ a{
     font-weight: 600;
 }
 
-/* 3. STRICT 2-COLUMN GRID FOR STICKY NOTES */
 .profile-notes-grid #post-container {
     display: grid;
-    grid-template-columns: repeat(2, 1fr) !important; /* Forces exactly 2 columns side-by-side */
+    grid-template-columns: repeat(2, 1fr) !important;
     gap: 20px !important;
     width: 100%;
 }
 
-/* 4. Reset individual sticky note containers so they fit perfectly */
 .profile-notes-grid #post-container .notes-container {
     margin: 0 !important;
     width: 100% !important;
@@ -979,10 +927,9 @@ a{
     display: block !important;
 }
 
-/* 5. Force the internal note card structures to render quadratically */
 .profile-notes-grid #post-container .notes1 {
     width: 100% !important;
-    min-height: 250px; /* Gives it that classic square sticky note feel */
+    min-height: 250px;
     box-shadow: 2px 4px 15px rgba(0, 0, 0, 0.08);
     border-radius: 10px;
     overflow: hidden;

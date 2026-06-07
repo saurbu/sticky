@@ -21,13 +21,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_FILES['profile_image'])) {
 
     if (in_array($fileExt, $allowed)) {
         if ($fileError === 0) {
-            if ($fileSize < 5000000) { // 5MB Limit
-                // Generate a unique filename to prevent overwriting
+            if ($fileSize < 5000000) { 
                 $newFileName = "profile_" . time() . "_" . uniqid('', true) . "." . $fileExt;
                 $fileDestination = 'img/' . $newFileName;
 
                 if (move_uploaded_file($fileTmpName, $fileDestination)) {
-                    // Update the profile picture path in the login3 table
+    
                     $stmt = $conn->prepare("UPDATE login3 SET profile_pic = ? WHERE username = ?");
                     $stmt->bind_param("ss", $fileDestination, $username);
                     

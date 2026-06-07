@@ -9,7 +9,7 @@ if (!isset($_SESSION['username'])) {
 
 $action = $_GET['action'] ?? '';
 
-// 1. FETCH POSTS (Now includes the 'likes' column data)
+// 1. FETCH POSTS
 if ($action === 'fetch') {
     $mode = $_GET['mode'] ?? 'home';
     $currentUser = $_SESSION['username'];
@@ -59,7 +59,7 @@ if ($action === 'create') {
     exit();
 }
 
-// 3. NEW ACTION: UPDATE LIKE COUNT IN DATABASE
+// 3. LIKE COUNT
 if ($action === 'like') {
     $data = json_decode(file_get_contents("php://input"), true);
     $postId = intval($data['id'] ?? 0);

@@ -24,7 +24,7 @@ if (isset($_POST["submit"])) {
         array_push($errors, "Passwords do not match.");
     }
 
-    // Comprehensive Check: Validate both username and email availability in login3
+    //Validate both username and email available in db
     $checkUser = "SELECT * FROM login3 WHERE username = ? OR email = ?";
     $stmt = mysqli_stmt_init($conn);
 

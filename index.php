@@ -207,7 +207,7 @@ $total_likes = $metrics['total_likes'] ?? 0;
     <script>
         const currentSessionUser = <?php echo json_encode($username); ?>;
         const currentSessionAvatar = <?php echo json_encode($profile_img); ?>;
-        window.activeFeedMode = 'home'; // Explicit window level initialization context
+        window.activeFeedMode = 'home';
 
         function toggleDrawer(open) {
             const drawer = document.getElementById('profileDrawer');

@@ -9,7 +9,7 @@ if (!isset($_SESSION['username'])) {
 
 $username = $_SESSION['username'];
 
-// Fetch the logged-in user's profile metadata
+// Fetch the logged-in user
 $query = "SELECT profile_pic, cover_banner, user_bio FROM login3 WHERE username='$username' LIMIT 1";
 $result = mysqli_query($conn, $query);
 $user_data = mysqli_fetch_assoc($result);
@@ -105,7 +105,7 @@ $total_likes = $metrics['total_likes'] ?? 0;
     <script>
         const currentSessionUser = <?php echo json_encode($username); ?>;
         const currentSessionAvatar = <?php echo json_encode($profile_img); ?>;
-        window.activeFeedMode = 'mine'; // Explicit window level initialization context
+        window.activeFeedMode = 'mine'; 
 
         function toggleDrawer(open) {
             const drawer = document.getElementById('profileDrawer');

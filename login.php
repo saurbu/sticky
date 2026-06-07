@@ -1,5 +1,4 @@
 <?php
-// 1. Using your registration config file to ensure we are on the exact same database
 require_once "database.php";
 session_start();
 
@@ -12,12 +11,9 @@ $loginError = "";
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
     $userInput = mysqli_real_escape_string($conn, trim($_POST['username']));
-    $password = $_POST['password']; // Raw password input from user
+    $password = $_POST['password'];
 
     if (!empty($userInput) && !empty($password)) {
-
-        // 2. Switched target table to 'login3' to match your registration page perfectly
-        // This query allows them to login using either their username OR their email string!
         $query = "SELECT * FROM login3 WHERE username='$userInput' OR email='$userInput' LIMIT 1";
         $result = mysqli_query($conn, $query);
         
@@ -26,10 +22,8 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
             $user_data = mysqli_fetch_assoc($result);
 
-            // 3. Since register.php uses secure password_hash(), we MUST use password_verify()
             if (password_verify($password, $user_data['password'])) {
 
-                // Save the actual username into the session so the dashboard can display it
                 $_SESSION['username'] = $user_data['username'];
 
                 echo "<script>

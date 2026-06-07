@@ -1,0 +1,290 @@
+/* ==========================================================================
+   Reset & Global Typography
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #fafad2; 
+    color: #262626;
+    min-height: 100vh;
+}
+
+/* Base Page Wrapper */
+.page-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* ==========================================================================
+   Split Layout Architecture
+   ========================================================================== */
+.main-content {
+    display: flex;
+    flex: 1;
+    width: 100%;
+    align-items: center; 
+    padding-top: 40px;
+    padding-bottom: 120px; /* Massive bottom gap ensuring plenty of space before footer */
+}
+
+/* Left Panel - Sticky Note Container */
+.sticky-side {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+}
+
+/* Sticky Note Card Background wrapper */
+.quote-box {
+    width: 500px;
+    height: 500px;
+    background: url('img/temp.png') no-repeat center center;
+    background-size: contain;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 75px 65px; /* Added higher top/bottom internal spacing padding */
+    position: relative;
+}
+
+/* ==========================================================================
+   Social Post UI inside Sticky Note (Perfect Top/Center/Bottom Spacing)
+   ========================================================================== */
+.post-card {
+    width: 100%;
+    max-width: 360px;
+    height: 100%; /* Spans full height inside note padding */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Pins header to TOP, body to CENTER, footer to BOTTOM */
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.post-card.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Header Area: Profile details pinned at the top */
+.post-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding-bottom: 10px;
+}
+
+.post-profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.profile-img {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    object-fit: cover;
+    background-color: #ddd;
+}
+
+.profile-info {
+    font-size: 15px;
+    font-weight: 700;
+    color: #000000;
+}
+
+.post-time {
+    font-weight: 500;
+    color: #555555;
+    margin-left: 5px;
+}
+
+.post-options {
+    color: #000000;
+    font-weight: 700;
+    font-size: 16px;
+    cursor: pointer;
+} platform
+
+/* Main Post Content Body centered vertically */
+.post-body {
+    flex: 1;
+    display: flex;
+    align-items: center; /* Centers the text perfectly within the open middle area */
+    text-align: left;
+    padding: 15px 0;
+}
+
+.quote-text {
+    font-size: 18px;
+    font-weight: 500;
+    color: #111111;
+    line-height: 1.5;
+}
+
+/* Footer Interaction Icons pinned at the bottom */
+.post-footer {
+    display: flex;
+    gap: 18px;
+    font-size: 18px;
+    color: #555555;
+    border-top: 1px solid rgba(0,0,0,0.06);
+    padding-top: 15px;
+    margin-bottom: 5px;
+}
+
+.post-footer i {
+    cursor: pointer;
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.post-footer i:hover {
+    color: #000;
+    transform: scale(1.1);
+}
+
+/* ==========================================================================
+   Right Panel - Form Container & Card Style
+   ========================================================================== */
+.form-side {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+}
+
+.form-card {
+    width: 100%;
+    max-width: 380px;
+    padding: 40px;
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.logo {
+    display: block;
+    max-width: 160px;
+    margin: 0 auto 30px;
+    object-fit: contain;
+}
+
+/* Inputs & Actions */
+.form-group {
+    margin-bottom: 16px;
+}
+
+.form-group input {
+    width: 100%;
+    height: 48px;
+    background: #ffffff;
+    border: 1px solid #dbdbdb;
+    border-radius: 6px;
+    padding: 0 14px;
+    font-size: 14px;
+    color: #262626;
+    transition: border-color 0.2s ease;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #0095f6;
+}
+
+.primary-btn {
+    width: 100%;
+    height: 46px;
+    background-color: #007bff;
+    border: none;
+    border-radius: 6px;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.2s ease;
+}
+
+.primary-btn:hover {
+    background-color: #0056b3;
+}
+
+.switch-page {
+    margin-top: 25px;
+    text-align: center;
+    font-size: 14px;
+}
+.switch-page a {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: 600;
+}
+
+/* Alert System Layout */
+.alert {
+    padding: 12px;
+    border-radius: 6px;
+    font-size: 13px;
+    margin-bottom: 15px;
+}
+.alert-danger { background-color: #fff2f2; border: 1px solid #ffcccc; color: #cc0000; }
+.alert-success { background-color: #f2fff2; border: 1px solid #ccffcc; color: #006600; }
+
+/* ==========================================================================
+   Global Footer
+   ========================================================================== */
+.footer {
+    width: 100%;
+    padding: 40px 20px; 
+    background-color: transparent; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    margin-top: auto; 
+}
+.footer-socials {
+    display: flex;
+    gap: 24px;
+}
+.footer-socials a {
+    color: #737373;
+    font-size: 18px;
+    transition: color 0.2s, transform 0.2s;
+}
+.footer-socials a:hover {
+    color: #000;
+    transform: translateY(-2px);
+}
+.footer-text {
+    font-size: 12px;
+    color: #8e8e8e;
+}
+
+/* ==========================================================================
+   Responsive Viewport Breakpoints
+   ========================================================================== */
+@media (max-width: 1024px) {
+    .quote-box { width: 400px; height: 400px; padding: 55px 45px; }
+}
+
+@media (max-width: 768px) {
+    .sticky-side { display: none !important; }
+    .main-content { 
+        flex-direction: column; 
+        padding-bottom: 60px;
+    }
+    .form-side { padding: 40px 20px; }
+}

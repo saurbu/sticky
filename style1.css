@@ -1,0 +1,989 @@
+/* ==========================================================================
+   GLOBAL STYLES & CORE CONFIGURATIONS
+   ========================================================================== */
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'poppins', 'sans-serif';
+    box-sizing: border-box;
+}
+
+body{
+    background-color: rgb(233, 233, 94);
+    color: black;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+/* ==========================================================================
+   NAVIGATION BAR COMPONENT
+   ========================================================================== */
+.navbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 6px 6%;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    background-color: rgb(233, 233, 94);
+}
+
+.logo img{
+    width: 100px;
+    margin-right: 10px;
+    display: block;
+}
+
+.nav-center ul li{
+    display: inline-block;
+    list-style: none;
+}
+
+.nav-center ul li a,
+.nav-center ul li button {
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    margin: 5px 8px;
+    padding-right: 5px;
+    position: relative;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+.nav-center ul li button img{
+    width: 18px;
+}
+
+.nav-center ul li a img{
+    width: 20px;
+}
+
+.nav-center ul li a::after,
+.nav-center ul li button::after {
+    content: '';
+    width: 0;
+    height: 2px;
+    background: #707e08;
+    position: absolute;
+    bottom: -12px;
+    transition: width 0.3s;
+}
+
+.nav-center ul li a:hover::after,
+.nav-center ul li a.active-link::after,
+.nav-center ul li button:hover::after {
+    width: 100%;
+}
+
+.nav-profile-img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: block;
+    cursor: pointer;
+    object-fit: cover;
+}
+
+.online{
+    position: relative;
+}
+
+.online::after{
+    content: '';
+    width: 7px;
+    height: 7px;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    right: 0px;
+    top: 0px;
+    background: #41db51;
+    position: absolute;
+}
+
+.search-box{
+    background: #f0f2f5;
+    width: 250px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+}
+
+.nav-left{
+    display: flex;
+    align-items: center;
+}
+
+.search-box img{
+    width: 20px;
+}
+
+.search-box input{
+    width: 100%;
+    background: transparent;
+    padding: 8px;
+    outline: none;
+    border: 0;
+}
+
+/* ==========================================================================
+   WORKSPACE GRID CONTAINER STRUCTURE
+   ========================================================================== */
+.container{
+    padding: 20px 6%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+/* ==========================================================================
+   LEFT SIDEBAR PANEL
+   ========================================================================== */
+.left-sidebar{
+    flex-basis: 25%;
+    align-self: flex-start;
+}
+
+.sidebar-profile-box{
+    background: #fff;
+}
+
+.sidebar-profile-info{
+    padding: 0 25px;
+}
+
+.sidebar-profile-info img{
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background: #fff;
+    padding: 4px;
+    margin-top: -45px;
+    object-fit: cover;
+}
+
+.sidebar-profile-info h1{
+    font-size: 20px;
+    font-weight: 600;
+    color: #222;
+}
+
+.sidebar-profile-info h3{
+    font-size: 14px;
+    font-weight: 500;
+    color: #777;
+}
+
+.sidebar-profile-info ul{
+    list-style: none;
+    margin: 20px 0;
+}
+
+.sidebar-profile-info ul li{
+    width: 100%;
+    margin: 5px 0;
+    font-size: 13px;
+}
+
+.sidebar-profile-info ul li span{
+    float: right;
+    color: #045be6;
+} 
+
+.sidebar-activity{
+    background: #fff;
+    padding: 5px 25px;
+    margin: 12px 0;
+}
+
+.sidebar-activity h3{
+    color: #777;
+    font-size: 14px;
+    font-weight: 500;
+    margin: 12px 0;
+}
+
+.sidebar-activity a{
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    font-weight: 500;
+    color: #888;
+    margin: 3px 0;
+}
+
+.sidebar-activity a img{
+    width: 15px;
+    margin-right: 10px;
+}
+
+.discover-more-links{
+    border-top: 1px solid #ccc;
+    text-align: center;
+    margin-top: 20px;
+    margin-right: -25px;
+    margin-left: -25px;
+}
+
+.discover-more-links a{
+    color: #045be6;
+    display: inline-block;
+    margin: 10px 0;
+}
+
+/* ==========================================================================
+   RIGHT SIDEBAR PANEL
+   ========================================================================== */
+.right-sidebar{
+    flex-basis: 25%;
+    align-self: flex-start;
+}
+
+.sidebar-news{
+    background: #fff;
+    padding: 10px 25px;
+}
+
+.info-icon{
+    width: 20px;
+    float: right;
+    margin-top: 8px;
+}
+
+.sidebar-news h3{
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+    margin: 10px 0 30px;
+}
+
+.sidebar-news a{
+    display: block;
+    font-size: 12px;
+    font-weight: 600;
+    margin-top: 10px;
+    margin-bottom: -5px;
+}
+
+.sidebar-news span{
+    font-size: 12px;
+}
+
+.sidebar-news .Read-more-link{
+    color: #045be6;
+    font-weight: 500;
+    margin: 20px 0 10px;
+}
+
+.right-sidebar-follow {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px; /* Smooth card edges to match the rest of the dashboard */
+    margin-top: 15px;
+    box-sizing: border-box;
+}
+
+.right-sidebar-follow h3 {
+    font-size: 15px;
+    color: #333;
+    
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-weight: 600;
+    font-family: 'poppins', sans-serif;
+}
+
+.follow-people {
+    list-style: none;
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+}
+
+/* Flexbox automatically handles side-by-side vertical alignment */
+.follow-people li {
+    display: flex;
+    align-items: center; 
+    margin-bottom: 15px;
+}
+
+.follow-people li img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    object-fit: cover; /* Prevents user avatars from stretching awkwardly */
+    margin-right: 12px; /* Smooth spacing between picture and text */
+    border: 1px solid #eaeaea;
+}
+
+.follow-people li span {
+    font-size: 14px;
+    color: #222;
+    font-weight: 500;
+    font-family: 'poppins', sans-serif;
+    word-break: break-all;
+}
+
+/* Beautiful styling for your action button */
+.find-more-btn {
+    width: 100%;
+    border: none;
+    background: #707e08;
+    color: white;
+    padding: 10px;
+    font-size: 13px;
+    font-weight: 600;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 5px;
+    font-family: 'poppins', sans-serif;
+    transition: background 0.2s, transform 0.1s;
+}
+
+.find-more-btn:hover {
+    background: #5b6706;
+}
+
+.find-more-btn:active {
+    transform: scale(0.98);
+}
+
+/* ==========================================================================
+   MAIN FEED POST SYSTEM WIDGETS & PICKERS
+   ========================================================================== */
+.main-content{
+    flex-basis: 47%;
+}
+
+.create-post{
+    background: #fff;
+}
+
+.create-post-input{
+    padding: 20px 25px 10px;
+    display: flex;
+    align-items: flex-start;
+}
+
+.create-post-input img{
+    width: 35px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.create-post-input textarea{
+    width: 100%;
+    border: 0;
+    outline: 0;
+    resize: none;
+    margin-top: 8px;
+}
+
+::placeholder{
+    font-weight: 500;
+}
+
+.create-post-links{
+    display: flex;
+    align-items: flex-start;
+}
+
+.create-post-links li{
+    list-style: none;
+    border-top: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    flex-basis: 25%;
+    height: 40px;
+    font-size: 13px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.create-post-links li img{
+    width: 15px;
+    margin-right: 5px;
+}
+
+.create-post-links li button.composer-submit-btn{
+    background: transparent;
+    font-size: 14px;
+    border: none;
+    font-weight: 700;
+    color: #707e08;
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+}
+
+.picker-inline-label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.picker-inline-label input[type="color"] {
+    width: 20px;
+    height: 20px;
+    border: none;
+    padding: 0;
+    background: transparent;
+    cursor: pointer;
+    border-radius: 4px;
+}
+/* =======================================================
+   ISOLATED SCROLL CONTEXT WITH HIDDEN SCROLLBARS
+   ======================================================= */
+
+/* 1. Dashboard Feed Container Setup (index.php) */
+#scroll-feed-viewport {
+    display: block;
+    width: 100%;
+    max-height: 75vh;            /* Restricts vertical container growth */
+    overflow-y: auto;            /* Keeps scrolling mechanics functional */
+    
+    /* Hides default native scrollbars for Firefox and IE/Edge */
+    scrollbar-width: none;       
+    -ms-overflow-style: none;    
+}
+
+/* 2. Workspace Personal Grid Setup (profile.php) */
+.profile-notes-grid {
+    display: block;
+    width: 100%;
+    max-height: 75vh;            /* Restricts profile container growth */
+    overflow-y: auto;            /* Keeps scrolling mechanics functional */
+    
+    /* Hides default native scrollbars for Firefox and IE/Edge */
+    scrollbar-width: none;       
+    -ms-overflow-style: none;    
+}
+
+/* 3. Completely hide the scrollbar track for Webkit Browsers (Chrome, Safari, newer Edge) */
+#scroll-feed-viewport::-webkit-scrollbar,
+.profile-notes-grid::-webkit-scrollbar {
+    display: none;               /* Eliminates the ugly vertical line entirely */
+    width: 0 !important;
+    height: 0 !important;
+    background: transparent;
+}
+
+/* ==========================================================================
+   FIXED SLIDE-OUT PROFILE DRAWER OVERLAY OVERLAP
+   ========================================================================== */
+.profile-drawer {
+    position: fixed;
+    top: 0;
+    right: -360px; 
+    width: 350px;
+    height: 100vh;
+    background: #ffffff !important; 
+    box-shadow: -5px 0 25px rgba(0,0,0,0.2);
+    transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 9999; 
+    padding: 40px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Securely isolates layout: top content vs bottom footer */
+    box-sizing: border-box;
+}
+
+.profile-drawer.open {
+    right: 0; 
+}
+
+/* Structural Wrapper to group avatar and upload form cleanly at the top */
+.drawer-main-content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-grow: 1;
+}
+
+.drawer-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.5);
+    z-index: 9998;
+    display: none;
+}
+
+.drawer-backdrop.show {
+    display: block;
+}
+
+.close-drawer-btn {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: none;
+    border: none;
+    font-size: 32px;
+    cursor: pointer;
+    color: #333;
+    font-weight: 300;
+}
+
+.drawer-avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 40px 0 15px;
+    border: 3px solid #707e08;
+    background-color: #f0f2f5;
+}
+
+.drawer-username {
+    font-size: 18px;
+    font-weight: 600;
+    color: #262626;
+    margin-bottom: 35px;
+}
+
+.upload-form-wrapper {
+    width: 100%;
+}
+
+.file-select-label {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background: #f0f2f5;
+    color: #444;
+    border-radius: 8px;
+    text-align: center;
+    cursor: pointer;
+    font-weight: 500;
+    margin-bottom: 15px;
+    border: 1px dashed #bbb;
+    transition: background 0.2s, border-color 0.2s;
+    box-sizing: border-box;
+}
+
+.file-select-label:hover {
+    background: #e4e6eb;
+    border-color: #707e08;
+}
+
+.upload-submit-btn {
+    width: 100%;
+    padding: 12px;
+    background: #707e08;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background 0.2s;
+    box-sizing: border-box;
+}
+
+.upload-submit-btn:hover {
+    background: #556006;
+}
+
+/* Footer Wrapper to cleanly pin items to bottom */
+.drawer-footer-wrapper {
+    width: 100%;
+    margin-top: auto;
+    padding-bottom: 10px;
+}
+
+.drawer-divider {
+    border: 0;
+    border-top: 1px solid #eee;
+    margin-bottom: 15px;
+}
+
+/* Red Styled Logout Button Action Link */
+.logout-action-link {
+    display: block;
+    width: 100%;
+    text-align: center;
+    background: #dc3545;
+    color: #ffffff !important;
+    padding: 12px;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    font-family: 'poppins', sans-serif;
+    border-radius: 8px;
+    transition: background 0.2s, transform 0.1s;
+    box-sizing: border-box;
+    box-shadow: 0 2px 5px rgba(220, 53, 69, 0.15);
+}
+
+.logout-action-link:hover {
+    background: #bd2130;
+}
+
+.logout-action-link:active {
+    transform: scale(0.98);
+}
+
+/* ==========================================================================
+   UNIFORM LARGE-FORMAT CENTERED NOTE ARCHITECTURE
+   ========================================================================== */
+.notes-container {
+    width: 100%;
+    margin: 25px 0;
+    display: flex;
+    justify-content: center; 
+}
+
+.notes1 {
+    width: 80% !important;   
+    min-width: 450px !important;  
+    max-width: 650px !important;  
+    aspect-ratio: 1 / 1 !important; 
+    padding: 65px 45px 40px 45px; 
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    transition: background 0.2s ease-in-out;
+    position: relative;
+}
+
+/* Base Template Assets */
+.notes1.tpl-yellow {
+    background: url('temp.png') no-repeat !important;
+    background-size: 100% 100% !important;
+    background-position: center !important;
+}
+
+.notes1.custom-user-image {
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    background-position: center !important;
+    border-radius: 16px;
+}
+
+/* Color Picker Applied Backgrounds Mode layout rules override */
+.notes1.custom-color-mode {
+    background-image: none !important;
+    border-radius: 16px;
+}
+
+/* Interior Structure layouts rules configuration */
+.post-card {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    /* box-sizing: border-box; */
+}
+
+.post-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 8px;
+}
+
+.post-profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.profile-img {
+    width: 42px; 
+    height: 42px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.profile-info {
+    font-size: 15px;
+    font-weight: 700;
+    color: #000000;
+}
+
+.post-time {
+    font-weight: 500;
+    color: #555555;
+    font-size: 13px;
+}
+
+.post-options {
+    color: #000000;
+    font-weight: 700;
+    font-size: 18px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.post-options-container {
+    position: relative;
+}
+
+.post-options-dropdown {
+    position: absolute;
+    right: 0;
+    top: 25px;
+    background: #ffffff;
+    border-radius: 6px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    border: 1px solid #ddd;
+    min-width: 120px;
+    display: none;
+    z-index: 500;
+}
+
+.post-options-dropdown.active {
+    display: block;
+}
+
+.dropdown-delete-action {
+    width: 100%;
+    background: none;
+    border: none;
+    padding: 10px 14px;
+    text-align: left;
+    font-size: 13px;
+    font-weight: 600;
+    color: #df2222;
+    cursor: pointer;
+}
+
+.post-body {
+    flex: 1;
+    display: flex;
+    align-items: center; 
+    justify-content: flex-start;
+    padding: 10px 0;
+    overflow-y: auto;
+}
+
+.quote-text {
+    font-size: 22px; 
+    font-weight: 500;
+    line-height: 1.45;
+    width: 100%;
+    text-align: left;
+    word-break: break-word;
+}
+
+.input-box {
+    background: transparent;
+    border: none;
+    outline: none;
+}
+
+.post-footer {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px;
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+    padding-top: 12px;
+    width: 100%;
+}
+
+.footer-icon-svg {
+    width: 20px;
+    height: 20px;
+    fill: none;
+    stroke: #111111;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    cursor: pointer;
+    transition: transform 0.2s, stroke 0.2s;
+}
+
+.footer-icon-svg:hover {
+    transform: scale(1.15);
+    stroke: #707e08;
+}
+
+/* ==========================================================================
+   INTERACTIVE LIKE MODULE WIDGET COMPONENT
+   ========================================================================== */
+.like-container-widget {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    user-select: none;
+}
+
+/* Base Heart Shape Vector Settings */
+.footer-icon-svg.heart-icon {
+    stroke: #111111; /* Visible outline border */
+    fill: none;       /* Initially transparent */
+    transition: fill 0.2s ease, stroke 0.2s ease, transform 0.1s ease;
+}
+
+/* Activated State Modifier Rules triggered by JS class list */
+.footer-icon-svg.heart-icon.liked-active {
+    fill: #ff4d4d !important;
+    stroke: #ff4d4d !important;
+}
+
+/* Scale pop animation effect on mouse click */
+.like-container-widget:active .heart-icon {
+    transform: scale(0.85);
+}
+
+/* Numeric Text Label Layout styling */
+.like-counter-display {
+    font-size: 14px;
+    font-weight: 600;
+    color: #111111;
+    transition: color 0.2s ease;
+}
+
+.like-counter-display.liked-text {
+    color: #ff4d4d;
+}
+
+/* Ensure contrast consistency over dark template assets */
+.notes1.tpl-dark .like-counter-display {
+    color: #ffffff;
+}
+.notes1.tpl-dark .like-counter-display.liked-text {
+    color: #ff4d4d;
+}
+
+/* Sidebar Modifications */
+.sidebar-profile-box { position: relative; }
+.sidebar-cover-banner { width: 100%; height: 95px; object-fit: cover; }
+.nav-icon-small { width: 16px; margin-right: 5px; }
+.sidebar-icon-inline { width: 16px; margin-right: 8px; }
+.discover-more-links { margin-top: 15px; border-top: 1px dashed #eee; padding-top: 10px; }
+.signout-trigger-text { color: #d9534f; }
+.hide-element { display: none; }
+
+/* Main Input Layout Adjustments */
+.creator-avatar-preview { width: 35px; height: 35px; border-radius: 50%; object-fit: cover; }
+.notes-input-wrapper { width: 100%; }
+.character-counter-node { font-size: 11px; color: #666; text-align: right; margin-top: 2px; font-family: 'poppins', sans-serif; }
+
+/* Right Sidebar Elements */
+.empty-feed-fallback { font-size: 12px; color: #777; padding: 10px 0; }
+.sidebar-heading-small { font-size: 14px; color: #333; margin-bottom: 12px; font-weight: 600; font-family: 'poppins'; }
+.member-directory-avatar { width: 32px; height: 32px; border-radius: 50%; object-fit: cover; margin-right: 10px; }
+.find-more-btn { width: 100%; border: none; background: #707e08; color: white; padding: 8px; font-size: 12px; font-weight: 600; border-radius: 4px; cursor: pointer; margin-top: 10px; font-family: 'poppins'; }
+
+/* Edit Icon Layout Trigger Button */
+.edit-profile-trigger-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: rgba(0, 0, 0, 0.6);
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+    z-index: 5;
+}
+.edit-profile-trigger-btn:hover { background: rgba(0, 0, 0, 0.8); }
+.edit-profile-trigger-btn svg { fill: #ffffff; width: 14px; height: 14px; }
+
+/* Edit Profile Modal Windows Box UI */
+.custom-edit-modal {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 2000;
+    align-items: center;
+    justify-content: center;
+}
+.custom-edit-modal.active { display: flex; }
+.modal-body-card {
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 420px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    font-family: 'poppins', sans-serif;
+    position: relative;
+}
+.modal-body-card h2 { margin-top: 0; margin-bottom: 20px; font-size: 18px; color: #333; }
+.modal-field-group { margin-bottom: 15px; }
+.modal-field-group label { display: block; font-size: 13px; font-weight: 600; color: #555; margin-bottom: 5px; }
+.modal-field-group input[type="text"] { width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 5px; box-sizing: border-box; }
+.modal-action-row { display: flex; justify-content: flex-end; gap: 10px; margin-top: 20px; }
+.modal-btn-save { background: #707e08; color: white; border: none; padding: 8px 16px; border-radius: 5px; cursor: pointer; font-weight: 600; }
+.modal-btn-cancel { background: #ccc; color: #333; border: none; padding: 8px 16px; border-radius: 5px; cursor: pointer; }
+
+/* ==========================================
+   PROFILE VIEW WORKSPACE - 2 COLUMN GRID FIX
+   ========================================== */
+
+/* 1. Main Content Two-Column Layout (Sidebar + Workspace) */
+.layout-profile-view {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 30px;
+    align-items: start;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+/* 2. Workspace Content Wrapper */
+.layout-grid-stream {
+    width: 100%;
+}
+
+.grid-section-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 25px;
+    font-weight: 600;
+}
+
+/* 3. STRICT 2-COLUMN GRID FOR STICKY NOTES */
+.profile-notes-grid #post-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr) !important; /* Forces exactly 2 columns side-by-side */
+    gap: 20px !important;
+    width: 100%;
+}
+
+/* 4. Reset individual sticky note containers so they fit perfectly */
+.profile-notes-grid #post-container .notes-container {
+    margin: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    display: block !important;
+}
+
+/* 5. Force the internal note card structures to render quadratically */
+.profile-notes-grid #post-container .notes1 {
+    width: 100% !important;
+    min-height: 250px; /* Gives it that classic square sticky note feel */
+    box-shadow: 2px 4px 15px rgba(0, 0, 0, 0.08);
+    border-radius: 10px;
+    overflow: hidden;
+}

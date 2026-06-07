@@ -1,0 +1,10 @@
+<div class="post">
+    <img class="uimg" src="pp.png" alt="">
+
+        <p class="uname">Sauravsharma</p>
+        <img class="dlt" src="delete.png" alt="">
+        <div class="notes1">
+            <p contenteditable="true" class="input-box">  
+                kofroi
+            </p>
+    </div>
